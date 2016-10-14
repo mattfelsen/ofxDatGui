@@ -177,8 +177,8 @@ void ofxDatGui::setEnabled(bool enabled)
 void ofxDatGui::setAutoDraw(bool autodraw, int priority)
 {
     mAutoDraw = autodraw;
-    ofRemoveListener(ofEvents().draw, this, &ofxDatGui::onDraw);
-    ofRemoveListener(ofEvents().update, this, &ofxDatGui::onUpdate);
+    ofRemoveListener(ofEvents().draw, this, &ofxDatGui::onDraw, OF_EVENT_ORDER_AFTER_APP + priority);
+    ofRemoveListener(ofEvents().update, this, &ofxDatGui::onUpdate, OF_EVENT_ORDER_BEFORE_APP - priority);
     if (autodraw){
         ofAddListener(ofEvents().draw, this, &ofxDatGui::onDraw, OF_EVENT_ORDER_AFTER_APP + priority);
         ofAddListener(ofEvents().update, this, &ofxDatGui::onUpdate, OF_EVENT_ORDER_BEFORE_APP - priority);
