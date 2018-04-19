@@ -62,7 +62,7 @@ void ofxDatGui::init()
     mGuiBackground = theme->color.guiBackground;
     
 // enable autodraw by default //
-    setAutoDraw(true);
+    //setAutoDraw(true);
     
 // assign focus to this newly created gui //
     mActiveGui = this;
@@ -416,6 +416,15 @@ void ofxDatGui::attachItem(ofxDatGuiComponent* item)
     }
     item->onInternalEvent(this, &ofxDatGui::onInternalEventCallback);
     layoutGui();
+}
+
+void ofxDatGui::removeItem(ofxDatGuiComponent* itemToRemove) {
+    for (int i = 0; i < items.size(); i++) {
+        if (items[i] == itemToRemove) {
+            items.erase(items.begin() + i);
+            break;
+        }
+    }
 }
 
 /*
