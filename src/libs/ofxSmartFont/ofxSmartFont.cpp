@@ -23,6 +23,9 @@
 
 
 #include "ofxSmartFont.h"
+
+using namespace std;
+
 vector<shared_ptr<ofxSmartFont>> ofxSmartFont::mFonts;
 
 /*
