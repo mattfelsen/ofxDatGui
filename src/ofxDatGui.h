@@ -42,6 +42,7 @@ class ofxDatGui : public ofxDatGuiInteractiveObject
         void setWidth(int width, float labelWidth = 0.35f);
         void setVisible(bool visible);
         void setEnabled(bool enabled);
+        void setExpanded(bool expanded);
         void setOpacity(float opacity);
         void setPosition(int x, int y);
         void setPosition(ofxDatGuiAnchor anchor);
@@ -55,6 +56,7 @@ class ofxDatGui : public ofxDatGuiInteractiveObject
         int getHeight();
         bool getFocused();
         bool getVisible();
+        bool getExpanded();
         bool getAutoDraw();
         bool getMouseDown();
         ofPoint getPosition();

@@ -125,6 +125,11 @@ bool ofxDatGui::getVisible()
     return mVisible;
 }
 
+bool ofxDatGui::getExpanded()
+{
+    return mExpanded;
+}
+
 bool ofxDatGui::getFocused()
 {
     return mActiveGui == this;
@@ -167,6 +172,11 @@ void ofxDatGui::setPosition(ofxDatGuiAnchor anchor)
 void ofxDatGui::setVisible(bool visible)
 {
     mVisible = visible;
+}
+
+void ofxDatGui::setExpanded(bool expanded)
+{
+    expanded ? expand() : collapse();
 }
 
 void ofxDatGui::setEnabled(bool enabled)
